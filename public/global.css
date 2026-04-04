@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+}
+:root {
+  --nav-height: 120px;
+}
+html,
+body {
+  width: 100vw;
+  background-color: #e7e7e7;
+}
+a {
+  text-decoration: none;
+}
+nav img {
+  width: 100px;
+}
+nav {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  padding-right: 40px;
+  min-height: 100px;
+  background-color: transparent;
+  z-index: 2;
+}
+nav .n-middle {
+  gap: 25px;
+  display: flex;
+}
+nav a {
+  font-weight: 700;
+  color: #efefef;
+}
