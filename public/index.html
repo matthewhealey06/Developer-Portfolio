@@ -15,18 +15,16 @@
   </head>
   <body>
     <nav>
-        <div class="n-left"><a href="/public/index.html"><img src="/public/images/m-logo.png" alt=""></a></div>
+        <div class="n-left"><a href="/public/index.html"><img src="/public/images/m-logo.png" alt="M Logo"></a></div>
           <div class="n-middle">
             <a href="/public/index.html">Home</a>
             <a href="/public/pages/about.html">About</a>
             <a href="/public/pages/collection.html">Collection</a>
           </div>
-        <n-right><a href="/public/pages/contact.html">Contact</a></right>
+        <div class="n-right"><a href="/public/pages/contact.html">Contact</a></div>
     </nav>
     <div class="hero">
-      <video src="images/Sunny Patio Background.mp4" autoplay loop></video>
-      <svg id="svg1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#1e1e1e" fill-opacity="1" 
-        d="M0,288L120,272C240,256,480,224,720,224C960,224,1200,256,1320,272L1440,288L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+      <video src="images/Sunny Patio Background.mp4" autoplay loop muted></video>
       <div class="h-text">
         <h1>Junior Software Developer <br />and Pen-Tester</h1>
         <p>Hey! I'm Matthew.</p>
@@ -38,11 +36,15 @@
       </div>
     </div>
     <div class="about-section">
+      <svg id="svg1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#1e1e1e" fill-opacity="1" d="M0,64L120,80C240,96,480,128,720,128C960,128,1200,96,1320,80L1440,64L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
       <p id="asp1">I'm a self-taught developer who builds responsive, polished websites with clean, intentional code.</p>
       <p id="asp2">Working with vanilla JS, HTML & CSS. Learning React, Node, and penetration testing with tools like ZAP.</p>
       <a id="asa1" href="pages/about.html">About Me</a>
       <p id="asp3">▼ Scroll to See More</p>
     </div>
     <div class="divider"></div>
+
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
