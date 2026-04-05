@@ -9,7 +9,11 @@
 }
 body {
   background-color: #1e1e1e;
-  height: 1000vh;
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 body::-webkit-scrollbar {
   display: none;
@@ -32,10 +36,13 @@ nav {
   z-index: 2;
 }
 nav .n-middle {
-  gap: 25px;
+  gap: 35px;
   display: flex;
 }
 nav a {
   font-weight: 700;
-  color: #efefef;
+  color: #c4c4c4;
+}
+.active{
+  color: rgb(255, 255, 255);
 }
