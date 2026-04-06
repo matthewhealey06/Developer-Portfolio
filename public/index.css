@@ -32,7 +32,7 @@
   font-size: 1.6em;
   order: 1;
 }
-#hp2{
+#hp2 {
   position: absolute;
   bottom: 2%;
   font-weight: 300;
@@ -47,7 +47,7 @@
   max-width: 100%;
   height: calc(100vh + 160px);
 }
-#svg1{
+#svg1 {
   display: block;
   width: 100%;
   z-index: 999;
@@ -83,7 +83,7 @@
   align-self: center;
   text-align: center;
   padding: 0 20%;
-  position: relative;  
+  position: relative;
 }
 #asp2 {
   font-size: 2em;
@@ -102,17 +102,17 @@
   border-radius: 40px;
   transition: all 0.4s ease;
 }
-#asa1:hover{
+#asa1:hover {
   background-color: #cc67fc;
 }
-#asp3{
+#asp3 {
   position: relative;
   top: 10px;
-  font-weight: 300
+  font-weight: 300;
 }
-.ab-bottom{
+.ab-bottom {
   display: flex;
-  align-items: center;  
+  align-items: center;
   justify-content: space-between;
   width: 50%;
 }
@@ -128,7 +128,7 @@
 }
 .vertical-line::before,
 .vertical-line::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 10px;
   height: 10px;
@@ -147,7 +147,7 @@
   bottom: 0;
   background: #cc67fc;
 }
-#svg2{
+#svg2 {
   display: block;
   width: 100%;
   z-index: 999;
@@ -156,21 +156,21 @@
   rotate: 180deg;
   margin-top: -30px;
 }
-.projects-section{
+.projects-section {
   width: 100%;
   display: flex;
   position: relative;
   flex-direction: column;
-  align-items: center;  
+  align-items: center;
 }
-.projects-grid{
+.projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 0 5%;
   gap: 50px;
   width: 66%;
 }
-.project-card{
+.project-card {
   position: relative;
   aspect-ratio: 1/2;
   overflow: hidden;
@@ -178,19 +178,19 @@
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
-.project-card img{
+.project-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   cursor: pointer;
 }
-.projects-section h2{
+.projects-section h2 {
   font-size: 2.6em;
   font-weight: 900;
   padding-bottom: 75px;
   color: #000000;
 }
-.project-category{
+.project-category {
   position: absolute;
   bottom: 20px;
   left: 20px;
@@ -214,31 +214,105 @@
   opacity: 0.6;
   pointer-events: none;
 }
+.spacer {
+  height: 300px;
+}
+.personal-profile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#moi {
+  height: 100vh;
+  object-fit: cover;
+}
+.profile-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 100px;
+  padding: 0 12%;
+  margin-top: 75px;
+}
+.left-divider,
+.right-divider {
+  margin-top: 50px;
+  width: 110%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  align-self: center;
+  justify-self: center;
+}
+.profile-wrapper p{
+  color: #000000;
+}
+.left-text-2, .right-text-2{
+  margin-top: 50px;
+  font-weight: 300;
+}
+.left-text-1 {
+  font-size: 2em;
+}
+.left-text-3, .right-text-3 {
+  font-size: 5em;
+  font-weight: 900;
+}
+.right-text-1 {
+  font-size: 1.4em;
+  font-weight: 300;
+}
+.flowing-line {
+  position: absolute;
+  left: 50px;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+  rotate: 15deg;
+}
+#flowing-path {
+  stroke-dasharray: 5000;
+  stroke-dashoffset: 5000;
+}
+
+
+
+
+
+body.dark-bg {
+  background: #1e1e1e;
+}
+.colour-trigger {
+  margin-top: -300px;
+}
 /*---------------------------------------*/
 
-@media(max-width:768px){
-  .hero video{
+@media (max-width: 768px) {
+  .hero video {
     height: 100vh;
   }
-  .vertical-line{
+  .vertical-line {
     display: none;
   }
-  #svg1{
+  #svg1 {
     position: relative;
     margin-top: -120px;
     min-height: none;
   }
-  #hp2{
+  #hp2 {
     bottom: 5%;
   }
-  .hero h1{
+  .hero h1 {
     font-size: 3em;
   }
-  #asp1{
+  #asp1 {
     margin-top: 0;
     padding: 0;
   }
-  .ab-bottom{
+  .ab-bottom {
     width: 80%;
   }
 }
