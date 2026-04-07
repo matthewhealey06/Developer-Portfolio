@@ -320,6 +320,9 @@
 }
 
 /* -- TOOLKIT SECTION -- */
+.line-section{
+  position: relative;
+}
 .toolkit-section {
   display: flex;
   flex-direction: column;
@@ -333,13 +336,14 @@
 }
 .flowing-line {
   position: absolute;
-  left: 50px;
+  left: -250px;
   width: 100%;
   height: 100%;
   pointer-events: none;
   z-index: 100;
   overflow: visible;
   rotate: 15deg;
+  margin-top: -25px;
 }
 #flowing-path {
   stroke-dasharray: 5000;
@@ -553,6 +557,11 @@ body.dark-bg {
   margin-top: 200px;
   width: 100%;
   padding: 0 20%;
+  z-index: 200;
+}
+.contact-section p, .contact-section h3, .contact-section input, .form-sentence{
+  position: relative;
+  z-index: 101;
 }
 .contact-title p{
   font-size: 1.4em;
@@ -630,7 +639,8 @@ footer{
   left: 0;
   width: 100%;
   z-index: 100;
-  rotate: 180deg;
+  filter: drop-shadow(0 4px 10px #1e1e1e);
+
 }
 .footer-container {
   position: relative;
