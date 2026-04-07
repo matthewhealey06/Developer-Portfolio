@@ -52,3 +52,22 @@ if (path && section) {
     }
   });
 }
+const selectSelected = document.querySelector('.select-selected');
+const selectOptions = document.querySelector('.select-options');
+
+selectSelected.addEventListener('click', () => {
+  selectOptions.classList.toggle('open');
+});
+
+selectOptions.querySelectorAll('li').forEach(option => {
+  option.addEventListener('click', () => {
+    selectSelected.textContent = option.textContent;
+    selectOptions.classList.remove('open');
+  });
+});
+
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.custom-select')) {
+    selectOptions.classList.remove('open');
+  }
+});
