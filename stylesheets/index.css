@@ -618,6 +618,8 @@ body.dark-bg {
   margin: 0;
   padding: 0;
   z-index: 10;
+  border-radius: 6px;
+  font-size: 0.8em;
 }
 .select-options.open {
   display: block;
@@ -653,6 +655,7 @@ body.dark-bg {
   padding: 40px;
   margin-left: 30%;
   font-size: 1.2em;
+  z-index: 9;
 }
 #wam a{
   text-decoration: underline;
