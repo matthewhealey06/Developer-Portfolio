@@ -1,0 +1,13 @@
+.body-wrapper{
+    display: flex;
+    height: calc(100vh - var(--nav-height));
+    justify-content: center;
+    overflow: hidden;
+}
+h1{
+    position: relative;
+    top: 40%;
+    color: #000;
+    font-weight: 900;
+    font-size: 2.2em;
+}
