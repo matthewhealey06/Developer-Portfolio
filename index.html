@@ -22,7 +22,7 @@
         /></a>
       </div>
       <div class="n-middle">
-        <a class="active" href="/public/index.html">Home</a>
+        <a class="active" href="index.html">Home</a>
         <a href="public/pages/about.html">About</a>
         <a href="public/pages/collection.html">Collection</a>
       </div>
@@ -158,9 +158,9 @@
           <div class="pw-bottom">
             <div class="left-divider"></div>
             <div class="right-divider"></div>
-            <p class="left-text-2">MONTHS OF EXPERIENCE</p>
+            <p class="left-text-2">CONTRIBUTIONS</p>
             <p class="right-text-2">PROJECTS COMPLETED</p>
-            <p class="left-text-3">4+</p>
+            <p class="left-text-3">130+</p>
             <p class="right-text-3">10+</p>
           </div>
         </div>
@@ -300,19 +300,23 @@
             <h3>Contact Me!</h3>
           </div>
           <div class="form-sentence">
-            Hey, my name is <input type="text" placeholder="Type Here" /> and I'm
+            Hey, my name is <input id="formName" type="text" placeholder="Type Here" /> and I'm
             looking for
             <div class="custom-select">
-              <div class="select-selected">Select Dropdown ▼</div>
+              <div id="formDropdown" class="select-selected">Select Dropdown ▼</div>
               <ul class="select-options">
-                <li data-value="web">Web Design</li>
-                <li data-value="collab">Collaboration</li>
+                <li data-value="web">Hiring / Job Opportunity</li>
+                <li data-value="collab">A website for my business</li>
                 <li data-value="other">Something Else</li>
               </ul>
             </div>
             <br />
             Get in touch with me at
-            <input type="email" placeholder="Your Email ID Here" />!
+            <input id="formEmail" type="email" placeholder="Your Email ID Here" />!
+          </div>
+          <div class="contact-bottom">
+            <button id="sendBtn">Send Enquiry <span class="arrow">→</span></button>
+            <p id="wam">or <a href="public/pages/about.html">write a message.</a></p>
           </div>
         </section>
       </section>
@@ -364,6 +368,7 @@
       </footer>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <script src="public/index.js"></script>
   </body>

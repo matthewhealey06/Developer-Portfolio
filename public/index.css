@@ -336,14 +336,14 @@
 }
 .flowing-line {
   position: absolute;
-  left: -250px;
+  left: -190px;
   width: 100%;
   height: 100%;
   pointer-events: none;
   z-index: 100;
   overflow: visible;
   rotate: 15deg;
-  margin-top: -25px;
+  margin-top: -100px;
 }
 #flowing-path {
   stroke-dasharray: 5000;
@@ -628,6 +628,34 @@ body.dark-bg {
 }
 .select-options li:hover {
   background: #3a3a3a;
+}
+.contact-bottom{
+  display: flex;
+}
+.contact-section button{
+  width: 200px;
+  height: 50px;
+  border: none;
+  background-color: #e7e7e7;
+  border-radius: 6px;
+  color: #000;
+  margin-top: 25px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.arrow{
+  color: #000;
+  margin-left: 25px;
+  font-size: 1.3em;
+}
+#wam{
+  position: relative;
+  padding: 40px;
+  margin-left: 30%;
+  font-size: 1.2em;
+}
+#wam a{
+  text-decoration: underline;
 }
 /* -- FOOTER -- */
 footer{
