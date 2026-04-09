@@ -11,6 +11,8 @@ body {
   background-color: #e7e7e7;
   animation: fadeIn 0.3s ease;
   transition: all 0.5s ease;
+}
+body, html, main{
   overflow-x: hidden;
 }
 @keyframes fadeIn {
@@ -28,18 +30,23 @@ nav img {
 }
 nav {
   display: flex;
-  position: relative;
+  position: absolute;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
-  padding-right: 40px;
   min-height: 100px;
   background-color: transparent;
-  z-index: 2;
+  z-index: 3;
+}
+.n-left{
+  padding-left: 10px;
 }
 nav .n-middle {
   gap: 35px;
   display: flex;
+}
+.n-right{
+  padding-right: 25px;
 }
 nav a {
   font-weight: 700;
