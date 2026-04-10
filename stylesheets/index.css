@@ -614,6 +614,7 @@ body.dark-bg {
   position: relative;
   display: inline-block;
   white-space: nowrap;
+  padding-right: 15px;
 }
 
 .select-selected {
@@ -623,6 +624,9 @@ body.dark-bg {
   color: gray;
   font-size: 0.8em;
   text-align: center;
+}
+.select-selected.has-value{
+  color: #fff;
 }
 
 .select-options {
@@ -688,6 +692,9 @@ body.dark-bg {
   .form-sentence {
     padding: 5%;
   }
+  .contact-bottom{
+    padding-left: 5%;
+  }
 }
 
 /* -- FOOTER -- */
@@ -725,7 +732,7 @@ footer a {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 100px 30px;
+  padding: 100px 10px;
 }
 .footer-wrapper p {
   font-weight: 700;

@@ -64,6 +64,7 @@ selectSelected.addEventListener("click", () => {
 selectOptions.querySelectorAll("li").forEach((option) => {
   option.addEventListener("click", () => {
     selectSelected.textContent = option.textContent;
+    selectSelected.classList.add('has-value')
     selectOptions.classList.remove("open");
   });
 });
@@ -101,6 +102,7 @@ sendForm.addEventListener("click", function () {
               document.getElementById("sendBtn").textContent = "Sent!";
               document.getElementById("formName").value = "";
               document.getElementById("formDropdown").textContent = "Select Dropdown ▼";
+              document.getElementById("formDropdown").classList.remove("has-value");
               document.getElementById("formEmail").value = "";
               setTimeout(() => {
               document.getElementById("sendBtn").textContent = "Send Enquiry →";
