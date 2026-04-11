@@ -10,7 +10,7 @@
 }
 .h-text {
   position: relative;
-  margin-top: 20vh;
+  margin-top: 33vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,6 +22,7 @@
 .hero h1,
 .hero p {
   background-color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 .hero h1 {
   font-weight: 500;
@@ -32,6 +33,11 @@
   font-weight: 500;
   font-size: 1.6em;
   order: 1;
+}
+.hero #hp3 {
+  order: 3;
+  font-size: 1.2em;
+  margin-top: -15px;
 }
 #hp2 {
   position: absolute;
@@ -625,7 +631,7 @@ body.dark-bg {
   font-size: 0.8em;
   text-align: center;
 }
-.select-selected.has-value{
+.select-selected.has-value {
   color: #fff;
 }
 
@@ -692,7 +698,7 @@ body.dark-bg {
   .form-sentence {
     padding: 5%;
   }
-  .contact-bottom{
+  .contact-bottom {
     padding-left: 5%;
   }
 }
