@@ -3,6 +3,8 @@
 }
 main {
   margin-top: var(--nav-height);
+}
+.wrapper-1{
   padding: 50px;
 }
 h1 {
@@ -16,11 +18,50 @@ p{
     font-size: 1.2em;
     line-height: 33px;
 }
-#p1{
+#w1p1{
     width: 1000px;
     margin-top: 20px
 }
-#p1 span{
+#w1p1 span{
     font-style: italic;
     color: rgb(200, 200, 200);
+}
+.scroll-wrapper {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 50px;
+}
+.scroll-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+.scroll-track span {
+  white-space: nowrap;
+  font-size: 6.8em;
+  font-weight: 500;
+}
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-33.3%); }
+}
+.wrapper-2{
+  display: flex;
+  width: 100%;
+  margin-top: 100px;
+}
+.wrapper-2 .right{
+  margin-left: auto;
+}
+.wrapper-2 img{
+  height: 85vh;
+  border-radius: 10px;
+  padding-right: 50px;
+}
+.left{
+  margin-top: 50px;
+}
+.w2p{
+  padding-left: 50px;
+  width: 85%;
 }
