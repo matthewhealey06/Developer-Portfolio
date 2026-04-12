@@ -1,5 +1,5 @@
 * {
-  color: black;
+  color: white;
 }
 main {
   margin-top: var(--nav-height);
@@ -12,7 +12,7 @@ h1 {
   font-weight: 300;
 }
 p{
-    color: rgb(64, 64, 64);
+    color: rgb(200, 200, 200);
     font-size: 1.2em;
     line-height: 33px;
 }
@@ -22,5 +22,5 @@ p{
 }
 #p1 span{
     font-style: italic;
-    color: rgb(64, 64, 64);
+    color: rgb(200, 200, 200);
 }
