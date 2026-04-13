@@ -99,7 +99,7 @@ h1 {
 
 /* -- MY TOOLS -- */
 .wrapper-3{
-  margin-top: 250px;
+  margin: 250px 0 100px 0;
 }
 .w3-top{
   display: flex;
@@ -161,8 +161,9 @@ h1 {
   align-items: center;
   justify-content: center;
 }
-#c1 .img-wrapper{
-  padding: 50px;
+#c1 .icons{
+  justify-content: space-evenly;
+  width: 100%;
 }
 .container img {
   max-width: 100px;
@@ -182,4 +183,19 @@ h1 {
 .row-bottom {
   display: flex;
   gap: 40px;
+}
+@media(max-width:768px){
+  .w3-bottom{
+    margin: 10px;
+  }
+  .container img{
+    max-width: 75px;
+    max-height: 75px;
+  }
+}
+@media(max-width:1024px){
+  #c1 .icons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
