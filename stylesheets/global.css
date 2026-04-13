@@ -64,10 +64,9 @@ nav a {
   display: none;
 }
 .mobile-menu-icon svg {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   color: white;
-  margin-right: 25px;
   cursor: pointer;
 }
 
@@ -82,12 +81,15 @@ nav a {
   .mobile-menu {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 70%;
     right: 0;
     background: #1e1e1e;
     flex-direction: column;
     padding: 20px;
     gap: 15px;
+    border-radius: 6px;
+    margin-right: 4%;
+    font-size: 1.4em;
   }
   .mobile-menu.open {
     display: flex;
