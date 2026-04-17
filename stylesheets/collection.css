@@ -1,0 +1,81 @@
+.body-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+  gap: 10px;
+}
+h1 {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  font-size: 3.3em;
+}
+.body-wrapper p {
+  width: 400px;
+  text-align: center;
+  justify-content: center;
+}
+.projects-wrapper {
+  margin-top: 70px;
+  height: calc(100vh - 150px - 70px - 200px);
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  gap: 50px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  overflow-y: hidden;
+  align-items: center;
+  justify-content: center;
+}
+.project {
+  border-radius: 30px;
+  aspect-ratio: 2/3;
+  position: relative;
+  height: 100%;
+}
+.project img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+  z-index: 0;
+  position: relative;
+}
+.project-overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  opacity: 0;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+.project-overlay h2 {
+  z-index: 2;
+  font-size: 2em;
+  padding: 25px;
+  font-weight: 700;
+}
+.project-overlay p {
+  z-index: 2;
+  padding: 10px 0 0 25px;
+  width: 80%;
+}
+.project:hover .project-overlay {
+  opacity: 1;
+}
+.project-overlay .project-tags {
+  position: absolute;
+  bottom: 5%;
+  text-align: center;
+  width: 100%;
+}
+.project-tags span {
+  padding: 0 15px;
+}
