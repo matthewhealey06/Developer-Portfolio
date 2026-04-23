@@ -25,11 +25,9 @@ h1 {
   box-sizing: border-box;
   display: flex;
   gap: 50px;
-  overflow-x: auto;
+  overflow-x: visible;
   scrollbar-width: none;
-  overflow-y: hidden;
   align-items: center;
-  justify-content: center;
 }
 .project {
   border-radius: 30px;
