@@ -34,6 +34,7 @@ h1 {
   aspect-ratio: 2/3;
   position: relative;
   height: 100%;
+  cursor: pointer;
 }
 .project img {
   width: 100%;
@@ -76,4 +77,8 @@ h1 {
 }
 .project-tags span {
   padding: 0 15px;
+}
+.projects-wrapper > a {
+  height: 100%;
+  display: block;
 }

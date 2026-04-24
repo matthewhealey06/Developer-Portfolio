@@ -1,5 +1,5 @@
 const PWrapper = document.querySelector(".projects-wrapper");
-const projects = PWrapper.querySelectorAll(".project");
+const projects = PWrapper.querySelectorAll(".projects-wrapper > a");
 
 projects.forEach((project) => {
   const clone = project.cloneNode(true);
@@ -11,7 +11,7 @@ let currentPosition = 0;
 function calculateSetWidth() {
   const cardWidth = projects[0].getBoundingClientRect().width;
   const gap = 50;
-  return cardWidth * projects.length + gap * (projects.length - 1);
+return (cardWidth * projects.length) + (gap * projects.length);
 }
 
 let setWidth = calculateSetWidth();
