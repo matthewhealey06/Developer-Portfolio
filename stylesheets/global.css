@@ -53,6 +53,36 @@ nav .n-middle {
 .n-right{
   padding-right: 25px;
 }
+.n-right a {
+  position: relative;
+  padding: 10px 20px;
+  transform: rotate(-5deg);
+  display: inline-block;
+  color: white;
+}
+
+.n-right a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(10deg);
+  z-index: -2;
+}
+
+.n-right a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(107, 43, 245, 0.8);
+  z-index: -1;
+}
 nav a {
   font-weight: 700;
   color: #c4c4c4;
@@ -60,7 +90,48 @@ nav a {
 .active{
   color: rgb(255, 255, 255);
 }
+.mobile-menu-icon {
+  display: none;
+}
+.mobile-menu-icon svg {
+  width: 45px;
+  height: 45px;
+  color: white;
+  cursor: pointer;
+}
 
+@media (max-width: 768px) {
+  .mobile-menu-icon {
+    display: block;
+    padding-right: 20px;
+  }
+  .n-middle a, .n-right a{
+    display: none;
+  }
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 70%;
+    right: 0;
+    background: #1e1e1e;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+    border-radius: 6px;
+    margin-right: 4%;
+    font-size: 1.4em;
+  }
+  .mobile-menu.open {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+
+/* Hide mobile menu on desktop */
+.mobile-menu {
+  display: none;
+}
 /* -- FOOTER -- */
 footer {
   background-color: #e7e7e7;
@@ -123,4 +194,25 @@ footer a {
   top: 25%;
   left: 50%;
   transform: translateX(-50%);
+  z-index: -999;
+}
+@media(max-width:768px){
+  .footer-inner-container{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  #fw3{
+    position: absolute;
+    bottom: 5%;
+    margin-left: 0;
+  }
+  #footer-img{
+    width: 80%;
+  }
+  .footer-bottom{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0;
+  }
 }
