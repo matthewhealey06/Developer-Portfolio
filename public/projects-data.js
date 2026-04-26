@@ -184,7 +184,7 @@ if (path && section) {
     githubLink: "https://github.com/matthewhealey06/Login-Form",
     image: "/public/images/login-from-placeholder.png",
     codeSnippet: {
-      title: "Something I found interesting",
+      title: "Hashed Passwords",
       language: "javascript",
       description:
         "Passwords are never stored in plain text. When a user registers, bcrypt hashes the password before it hits the database. On login, bcrypt.compare hashes the attempt and compares it to the stored hash. If they match, access is granted. There's no way to reverse the hash, which means even if the database were compromised, the raw passwords stay protected.",

@@ -303,4 +303,7 @@ code {
   .lesson-text {
     font-size: 1.1em;
   }
+  .code-section {
+    grid-template-columns: 1fr;
+  }
 }
