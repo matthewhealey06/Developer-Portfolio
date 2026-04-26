@@ -11,7 +11,7 @@ const projectsData = [
     githubLink: "https://github.com/matthewhealey06/Photography-Portfolio",
     image: "/public/images/mhp-placeholder.png",
     codeSnippet: {
-      title: "Something I found interesting",
+      title: "Horizontal Drag Track",
       language: "javascript",
       description:
         "The drag slider was built around a single applyTransform function that handles both the track position and image objectPosition simultaneously. A clamp utility keeps the drag within bounds, and the three mouse events work together using an isDragging flag to track when a drag is active and calculate how far the user has moved from their starting point.",
@@ -48,7 +48,7 @@ const projectsData = [
     githubLink: "https://github.com/matthewhealey06/to-do-list",
     image: "/public/images/todo-list-placeholder.png",
     codeSnippet: {
-      title: "Something I found interesting",
+      title: "localStorage IDs",
       language: "javascript",
       description:
         "When the app loads from localStorage, it can't just start IDs from 1 again — those IDs already exist. Instead, it flattens all todos across every list into a single array, finds the highest existing ID using Math.max with a spread operator, then starts from there plus one. This guarantees no duplicates regardless of how many lists or todos have been created and deleted over time.",
@@ -81,7 +81,7 @@ if (allTodos.length === 0) {
     githubLink: "https://github.com/matthewhealey06/shopping-cart-project",
     image: "/public/images/shopping-cart-placeholder.png",
     codeSnippet: {
-      title: "Something I found interesting",
+      title: "DOM Creation & Event Delegation",
       language: "javascript",
       description:
         "Products are built entirely in JavaScript from a live API fetch, no HTML templates, no framework. Each element is created, configured, and appended manually. <br><br>The problem this creates is that you can't attach click listeners inside the forEach loop to buttons that are being dynamically generated. If you did, each render cycle would stack duplicate listeners.<br><br> Instead, a single event listener sits on the parent cart element and uses event bubbling to catch clicks from any button inside it, regardless of when it was created. This is event delegation, one listener handling every plus, minus, and remove action across the entire cart.",
@@ -131,27 +131,46 @@ cart.addEventListener('click', (event) => {
     title: "Developer Portfolio",
     category: "Frontend / Vanilla JS",
     description:
-      "The site you're on right now. Built from scratch with vanilla HTML, CSS, and JavaScript — no frameworks, no shortcuts. Includes a scroll-driven SVG path animation, EmailJS contact form, Lenis smooth scroll, a component system for the nav and footer, and a dynamic background colour trigger on scroll.",
+      "The site you're on right now. Built from scratch with vanilla HTML, CSS, and JavaScript - no frameworks, no shortcuts. Includes a scroll-driven SVG path animation, EmailJS contact form, Lenis smooth scroll, a component system for the nav and footer, and a dynamic background colour trigger on scroll.",
     tags: ["HTML", "CSS", "JavaScript", "EmailJS", "Lenis"],
     liveLink: "https://matthewhealey.dev",
     githubLink: "https://github.com/matthewhealey06/Developer-Portfolio",
     image: "/public/images/dev-portfolio-placeholder.png",
     codeSnippet: {
-      title: "Something I found interesting",
+      title: "SVG Path",
       language: "javascript",
       description:
-        "Placeholder — add a short explanation of a problem you solved or something you built here.",
-      code: `// Placeholder — paste a real snippet here
-// e.g. the scroll-driven SVG path animation,
-// the IntersectionObserver background colour trigger,
-// or the component injection system
+        "The SVG path animation works by exploiting two CSS properties, strokeDasharray and strokeDashoffset. Setting both to the total path length makes the stroke invisible. As the user scrolls, the offset is reduced proportionally, revealing the path as if it's being drawn in real time. The scroll position is mapped to a progress value between 0 and 1 based on where the section sits in the viewport, with clamping at both ends so the animation doesn't run before or after its intended range.",
+      code: `const path = document.getElementById("flowing-path");
+const section = path.closest("section");
 
-function placeholder() {
-  console.log("Add your code here");
+if (path && section) {
+  const pathLength = path.getTotalLength();
+  path.style.strokeDasharray = pathLength;
+  path.style.strokeDashoffset = pathLength;
+
+  window.addEventListener("scroll", () => {
+    const sectionTop = section.offsetTop;
+    const scrollTop = window.scrollY;
+    const windowHeight = window.innerHeight;
+
+    const startDraw = sectionTop - windowHeight + 700;
+    const drawDistance = 2400;
+    const endDraw = startDraw + drawDistance;
+
+    if (scrollTop < startDraw) {
+      path.style.strokeDashoffset = pathLength;
+    } else if (scrollTop > endDraw) {
+      path.style.strokeDashoffset = 0;
+    } else {
+      const progress = (scrollTop - startDraw) / drawDistance;
+      path.style.strokeDashoffset = pathLength - pathLength * progress;
+    }
+  });
 }`,
     },
     lesson:
-      "Placeholder — what did building this teach you? What would you do differently?",
+      "This was a huge project with a lot which I learnt. From the first time using lenis smooth scroll to the SVG path which follows relative to the screen. I have learnt so much. I really focused on the design of the website, trying to make it feel as professional as possible. And I believe I achieved just that.",
   },
   /* --- LOGIN FORM --- */
   {
@@ -168,16 +187,30 @@ function placeholder() {
       title: "Something I found interesting",
       language: "javascript",
       description:
-        "Placeholder — add a short explanation of a problem you solved or something you built here.",
-      code: `// Placeholder — paste a real snippet here
-// e.g. how you handled password hashing,
-// session management, or form validation
+        "Passwords are never stored in plain text. When a user registers, bcrypt hashes the password before it hits the database. On login, bcrypt.compare hashes the attempt and compares it to the stored hash. If they match, access is granted. There's no way to reverse the hash, which means even if the database were compromised, the raw passwords stay protected.",
+      code: `app.post("/api/login", (req, res) => {
+  const { username, password } = req.body;
 
-function placeholder() {
-  console.log("Add your code here");
-}`,
+  User.findOne({ username: username })
+    .then((user) => {
+      if (user === null) {
+        res.json({ success: false, message: "User not found" });
+      } else {
+        bcrypt.compare(password, user.password).then((isMatch) => {
+          if (isMatch) {
+            res.json({ success: true });
+          } else {
+            res.json({ success: false, message: "Wrong password" });
+          }
+        });
+      }
+    })
+    .catch((err) => {
+      res.status(500).json({ error: "Server error" });
+    });
+});`,
     },
     lesson:
-      "Placeholder — what did building this teach you? What would you do differently?",
+      "I really wasn't going to turn this project into a backend project, in fact it just started as front end. But I'm glad I did, it taught me so much about Node.js and MongoDB. But most importantly how to keep user information safe. From learning how to hash the password, storing data within a database, I learnt something more than just using localStorage",
   },
 ];

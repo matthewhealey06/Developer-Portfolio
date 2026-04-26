@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ? `
         <section class="code-section">
         <div class="code-left">
-            <div class="section-label">/ Code Breakdown</div>
+            <div class="section-label">/ Something I Found Interesting</div>
             <h2>${project.codeSnippet.title}</h2>
             <p class="snippet-description">${project.codeSnippet.description}</p>
         </div>
