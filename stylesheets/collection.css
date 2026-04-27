@@ -82,3 +82,75 @@ h1 {
   height: 100%;
   display: block;
 }
+@media(min-width:768px){
+  .m-projects-wrapper{
+    display: none;
+  }
+}
+/* --- MOBILE --- */
+@media (max-width: 768px) {
+  .projects-wrapper {
+    display: none;
+  }
+}
+.m-projects-wrapper {
+  width: 100vw;
+}
+
+.m-project {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.m-project-text {
+  padding: 30px 20px 20px 20px;
+}
+
+.m-project-text h2 {
+  font-size: 1.6em;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.m-project-text p {
+  color: lightgrey;
+  font-size: 0.95em;
+}
+
+.m-image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.m-image-wrapper img {
+  width: 95%;
+  object-fit: cover;
+  display: block;
+  align-self: center;
+  justify-self: center;
+}
+
+.m-project-tags {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+
+}
+
+.m-project-tags span {
+  padding: 0 10px;
+  font-size: 0.85em;
+  color: white;
+  background: rgba(100, 100, 100, 0.5);
+  padding: 6px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  width: fit-content;
+  border-radius: 25px;
+  margin: 0 6px;
+}
+

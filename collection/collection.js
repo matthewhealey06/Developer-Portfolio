@@ -1,3 +1,4 @@
+if (window.innerWidth > 768) {
 const PWrapper = document.querySelector(".projects-wrapper");
 const projects = PWrapper.querySelectorAll(".projects-wrapper > a");
 
@@ -34,3 +35,5 @@ document.addEventListener("wheel", (e) => {
   currentPosition -= e.deltaY;
   applyTransform();
 });
+
+}
