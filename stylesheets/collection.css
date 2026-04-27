@@ -83,13 +83,13 @@ h1 {
   display: block;
 }
 @media(min-width:768px){
-  .m-projects-wrapper{
+  .m-projects-wrapper, .m-project, .m-image-wrapper{
     display: none;
   }
 }
 /* --- MOBILE --- */
 @media (max-width: 768px) {
-  .projects-wrapper {
+  .projects-wrapper, .project {
     display: none;
   }
 }
