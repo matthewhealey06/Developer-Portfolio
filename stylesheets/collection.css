@@ -82,7 +82,7 @@ h1 {
   height: 100%;
   display: block;
 }
-@media(min-width:768px){
+@media(min-width:769px){
   .m-projects-wrapper, .m-project, .m-image-wrapper{
     display: none;
   }
