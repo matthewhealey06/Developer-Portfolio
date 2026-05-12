@@ -128,8 +128,7 @@ h1 {
   width: 95%;
   object-fit: cover;
   display: block;
-  align-self: center;
-  justify-self: center;
+  margin: 0 auto;
 }
 
 .m-project-tags {

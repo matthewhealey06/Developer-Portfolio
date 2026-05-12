@@ -103,3 +103,15 @@ sendForm.addEventListener("click", function () {
               alert("Something went wrong, please try again.");
           });
 });
+
+/* --- --- */
+const cards = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right')
+const cardObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show')
+    }
+  })
+}, {})
+
+cards.forEach(card => cardObserver.observe(card))
