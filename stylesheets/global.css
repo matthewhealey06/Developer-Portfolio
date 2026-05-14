@@ -49,6 +49,14 @@ a {
   opacity: 1;
   transform: translate(0);
 }
+@media (max-width: 1024px) {
+  .fade-in-left {
+    transform: translateX(-50px);
+  }
+  .fade-in-right {
+    transform: translateX(50px);
+  }
+}
 /* -- NAV SECTION --*/
 nav img {
   width: 100px;
