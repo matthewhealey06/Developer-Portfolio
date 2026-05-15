@@ -23,9 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
           </a>`
         : `<span class="btn-disabled">No Live Link</span>`
     }
-    <a href="${project.githubLink}" target="_blank" class="btn-secondary">
-      GitHub <span>↗</span>
-    </a>
+    ${
+      project.githubLink
+        ? `<a href="${project.githubLink}" target="_blank" class="btn-secondary">
+            GitHub <span>↗</span>
+          </a>`
+        : `<span class="btn-disabled">No GitHub Link</span>`
+    }
   `;
 
     const snippetHTML = project.codeSnippet

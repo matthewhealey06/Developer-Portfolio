@@ -213,4 +213,27 @@ if (path && section) {
     lesson:
       "I really wasn't going to turn this project into a backend project, in fact it just started as front end. But I'm glad I did, it taught me so much about Node.js and MongoDB. But most importantly how to keep user information safe. From learning how to hash the password, storing data within a database, I learnt something more than just using localStorage",
   },
+  /* --- UGC SITE --- */
+  {
+    id: "ugc-site",
+    title: "LifeWithTheHealeyMcdaids UGC Site",
+    category: "Frontend / Vanilla JS",
+    description:
+      "A full UGC site which includes services, brands worked with, contact form, alongside some video examples. The site allows brands to easily visualise and contact her with any future projects while maintaining a professional identity. No github link as it is a client project.",
+    tags: ["HTML", "CSS", "JavaScript", "EmailJS"],
+    liveLink: "thehealeymcdaids.com",
+    githubLink: null,
+    image: "/public/images/ugc-hero.png",
+    codeSnippet: {
+      title: "Compressed Files",
+      language: "javascript",
+      description:
+        "I initially faced a problem with this, after uploading the videos, the live site wouldn't process due to being over 25 MiB. I then used FFmpeg to compress videos & sharp-cli to compress photos, in return helping speed up the site.",
+      code: `ffmpeg -i input.mp4 -c:v libx264 -crf 28 -preset slow -c:a aac -b:a 128k output.mp4
+
+sharp -i input.jpg -o output.jpg --quality 70`,
+    },
+    lesson:
+      "With this project, I learnt how important it is to keep files conpressed, but also the making of a professional site. Knowing sometimes it's best to hold off on some features, which may negatively impact the users experience.",
+  },
 ];
