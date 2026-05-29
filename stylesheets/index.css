@@ -259,6 +259,17 @@ body{
   opacity: 0.6;
   pointer-events: none;
 }
+.view-all-btn {
+  margin-top: 60px;
+  background-color: #9246fd;
+  font-size: 1.2em;
+  padding: 20px 30px;
+  border-radius: 40px;
+  transition: all 0.4s ease;
+}
+.view-all-btn:hover {
+  background-color: #cc67fc;
+}
 .spacer {
   height: 300px;
 }
