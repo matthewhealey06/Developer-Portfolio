@@ -95,6 +95,21 @@ if (htmlFiles.length === 0) {
   process.exit(0);
 }
 
+function copyNonHtmlFiles(srcDir, distDir) {
+  const entries = fs.readdirSync(srcDir, { withFileTypes: true });
+  for (const entry of entries) {
+    const srcPath = path.join(srcDir, entry.name);
+    const destPath = path.join(distDir, entry.name);
+    if (entry.isDirectory()) {
+      copyNonHtmlFiles(srcPath, path.join(distDir, entry.name));
+    } else if (!entry.name.endsWith(".html")) {
+      fs.mkdirSync(path.dirname(destPath), { recursive: true });
+      fs.copyFileSync(srcPath, destPath);
+      console.log(`  ${path.relative(SRC_DIR, srcPath)}`);
+    }
+  }
+}
+
 for (const filePath of htmlFiles) {
   const relativePath = path.relative(SRC_DIR, filePath);
   const destPath = path.join(DIST_DIR, relativePath);
@@ -107,6 +122,9 @@ for (const filePath of htmlFiles) {
   fs.writeFileSync(destPath, built, "utf-8");
   console.log(`  ${relativePath}`);
 }
+
+// Copy non-HTML files from src (e.g. collection.js)
+copyNonHtmlFiles(SRC_DIR, DIST_DIR);
 
 console.log(`\n${htmlFiles.length} HTML file(s) written to ${DIST_DIR}/`);
 
