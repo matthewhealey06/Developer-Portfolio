@@ -234,6 +234,60 @@ if (path && section) {
 sharp -i input.jpg -o output.jpg --quality 70`,
     },
     lesson:
-      "With this project, I learnt how important it is to keep files conpressed, but also the making of a professional site. Knowing sometimes it's best to hold off on some features, which may negatively impact the users experience.",
+      "With this project, I learnt how important it is to keep files compressed, but also the making of a professional site. Knowing sometimes it's best to hold off on some features, which may negatively impact the users experience.",
+  },
+
+    /* --- La Esquina de Mateo --- */
+  {
+    id: "la-esquina",
+    title: "La Esquina de Mateo",
+    category: "Frontend / Vanilla JS",
+    description:
+      "A working site for an upscale Latin American website. With a booking form, contact section and a display of signature dishes",
+    tags: ["HTML", "CSS", "JavaScript", "EmailJS"],
+    liveLink: "https://laesquina.matthewhealey.dev/",
+    githubLink: "https://github.com/matthewhealey06/la-esquina-de-mateo",
+    image: "/public/images/la-esquina-hero.png",
+    codeSnippet: {
+      title: "Choose Your Date",
+      language: "javascript",
+      description:
+        "To allow for the booking to happen for any day from the current date to 3 months from then, I had to set 2 dates, then using for each it goes through each date until it reaches endDate.",
+      code: `const today = new Date();
+const endDate = new Date();
+today.setDate(today.getDate() + 1);
+endDate.setMonth(endDate.getMonth() + 3);
+
+const dates = [];
+
+while (today < endDate) {
+  dates.push(
+    today.toLocaleDateString("en-GB", {
+      weekday: "short",
+      day: "numeric",
+      month: "short",
+    }),
+  );
+  today.setDate(today.getDate() + 1);
+}
+
+const dateSelect = document.getElementById("date-select");
+const dateLabel = document.querySelector("#date-select span");
+const dateOptions = document.querySelector("#date-select .dropdown-options");
+
+dates.forEach((date) => {
+  const option = document.createElement("span");
+  option.textContent = date;
+  option.addEventListener("click", function (e) {
+    e.stopPropagation();
+    dateLabel.textContent = date;
+    dateOptions.style.display = "none";
+  });
+  dateOptions.appendChild(option);
+});`,
+    },
+    lesson:
+      "With this project, I learnt how to create a professional looking site, rather than trying to make it look 'cool', I needed to make it funtional and something customers would want to book a table for.",
   },
 ];
+
