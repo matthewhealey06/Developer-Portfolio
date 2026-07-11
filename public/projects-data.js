@@ -237,7 +237,7 @@ sharp -i input.jpg -o output.jpg --quality 70`,
       "With this project, I learnt how important it is to keep files compressed, but also the making of a professional site. Knowing sometimes it's best to hold off on some features, which may negatively impact the users experience.",
   },
 
-    /* --- La Esquina de Mateo --- */
+  /* --- La Esquina de Mateo --- */
   {
     id: "la-esquina",
     title: "La Esquina de Mateo",
@@ -289,5 +289,42 @@ dates.forEach((date) => {
     lesson:
       "With this project, I learnt how to create a professional looking site, rather than trying to make it look 'cool', I needed to make it funtional and something customers would want to book a table for.",
   },
-];
+  /* --- Matthew's Auto Detailing --- */
+  {
+    id: "matthews-auto-detailing",
+    title: "Matthew's Auto Detailing",
+    category: "Frontend / Vanilla JS",
+    description:
+      "A mock up premium car valeting site, built as an example for what is possible. Built making sure each section naturally goes into the next. Could this be your next site?",
+    tags: ["HTML", "CSS", "JavaScript", "EmailJS"],
+    liveLink: "https://matthews-auto-detailing.matthewhealey.dev/",
+    githubLink: "https://github.com/matthewhealey06/matthews-auto-detailing",
+    image: "/public/images/matthews-auto-detailing-hero.png",
+    codeSnippet: {
+      title: "Back End Telephone",
+      language: "javascript",
+      description:
+        "A problem many people often make when building a website for their business is that they hardcode their number into the website, this allows for basic scrapers to find your site, scrape information and then send you spam, targetted calls. Coding it in the back end helps stop that.",
+      code: `(function () {
+  const p = ["07", "593", " 284", " 599"];
+  const num = p.join(""); // "07593 284 599"  (display)
+  const digits = num.replace(/\s/g, ""); // "07593284599"     (tel)
+  const intl = digits.replace(/^0/, "44"); // "447593284599"    (whatsapp)
 
+  const tel = document.getElementById("phone-link");
+  if (tel) {
+    tel.href = "tel:" + digits;
+    tel.textContent = num;
+  }
+
+  const wa = document.getElementById("whatsapp-link");
+  if (wa) {
+    wa.href = "https://wa.me/" + intl;
+  }
+})();
+`,
+    },
+    lesson:
+      "With this project, I learnt how to create a professional looking site, rather than trying to make it look 'cool', I needed to make it funtional and something customers would want to book a table for.",
+  },
+];
