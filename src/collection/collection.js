@@ -11,7 +11,7 @@ let currentPosition = 0;
 
 function calculateSetWidth() {
   const cardWidth = projects[0].getBoundingClientRect().width;
-  const gap = 50;
+  const gap = 20;
 return (cardWidth * projects.length) + (gap * projects.length);
 }
 
