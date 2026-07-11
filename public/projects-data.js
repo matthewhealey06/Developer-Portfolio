@@ -221,7 +221,7 @@ if (path && section) {
     description:
       "A full UGC site which includes services, brands worked with, contact form, alongside some video examples. The site allows brands to easily visualise and contact her with any future projects while maintaining a professional identity. No github link as it is a client project.",
     tags: ["HTML", "CSS", "JavaScript", "EmailJS"],
-    liveLink: "thehealeymcdaids.com",
+    liveLink: "https://thehealeymcdaids.com/",
     githubLink: null,
     image: "/public/images/ugc-hero.png",
     codeSnippet: {
