@@ -1,0 +1,303 @@
+/* ------------------------------------------------------------------
+   blog.css  —  layers on top of global.css
+   Every colour is a variable. If global.css already defines your
+   palette, point these at it and the blog inherits the site.
+   ------------------------------------------------------------------ */
+
+:root {
+  --blog-measure: 68ch;
+
+  --blog-bg: #1e1e1e;          /* matches the #1e1e1e in your SVG dividers */
+  --blog-text: #e8e8e8;
+  --blog-muted: #9a9a9a;
+  --blog-rule: #333;
+  --blog-accent: #cc67fc;      /* from your purple-flow-gradient */
+  --blog-accent-deep: #5726fb; /* the other stop of that gradient */
+  --blog-code-bg: #141414;
+  --blog-inline-code-bg: #2a2a2a;
+
+  --blog-font: "Lato", system-ui, sans-serif;
+  --blog-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+
+/* ---------------------------------------------------------- layout */
+
+.post,
+.blog-index {
+  max-width: var(--blog-measure);
+  margin: 0 auto;
+  padding: 5rem 1.25rem 6rem;
+  color: var(--blog-text);
+  font-family: var(--blog-font);
+}
+
+/* ------------------------------------------------------ typography */
+
+.post article {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+.post h1 {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 900;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.6rem;
+  text-wrap: balance;
+}
+
+/* Section rules use the site gradient rather than a flat line, so the
+   blog reads as part of the same site as the flowing-path sections. */
+.post h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 3rem 0 0.85rem;
+  padding-top: 1.5rem;
+  position: relative;
+}
+
+.post h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4rem;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--blog-accent-deep),
+    var(--blog-accent)
+  );
+}
+
+.post h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 2rem 0 0.5rem;
+}
+
+.post p,
+.post ul,
+.post ol {
+  margin: 0 0 1.3rem;
+}
+
+.post li {
+  margin-bottom: 0.45rem;
+}
+.post li > ul,
+.post li > ol {
+  margin-top: 0.45rem;
+}
+
+.post strong {
+  font-weight: 700;
+  color: #fff;
+}
+
+.post a {
+  color: var(--blog-accent);
+  text-underline-offset: 0.15em;
+}
+.post a:hover {
+  color: #fff;
+}
+
+.post blockquote {
+  margin: 1.5rem 0;
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  border-left: 2px solid var(--blog-accent-deep);
+  color: var(--blog-muted);
+}
+
+.post hr {
+  border: 0;
+  border-top: 1px solid var(--blog-rule);
+  margin: 2.5rem 0;
+}
+
+.post img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.post table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+.post th,
+.post td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--blog-rule);
+}
+
+/* ------------------------------------------------------------ meta */
+
+.post-header {
+  margin-bottom: 3rem;
+}
+
+.meta {
+  font-size: 0.82rem;
+  color: var(--blog-muted);
+  margin: 0.5rem 0 0;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+.tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.tags a {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--blog-rule);
+  border-radius: 999px;
+  color: var(--blog-muted);
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.tags a:hover {
+  color: var(--blog-text);
+  border-color: var(--blog-accent);
+}
+
+.back {
+  margin-top: 4.5rem;
+  font-size: 0.9rem;
+}
+.back a {
+  color: var(--blog-muted);
+  text-decoration: none;
+}
+.back a:hover {
+  color: var(--blog-accent);
+}
+
+/* ----------------------------------------------------------- index */
+
+.blog-index h1 {
+  font-size: clamp(1.7rem, 4vw, 2.1rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.4rem;
+}
+
+.blog-description {
+  color: var(--blog-muted);
+  margin: 0 0 3.5rem;
+  font-weight: 300;
+}
+
+.post-summary {
+  padding-bottom: 2.25rem;
+  margin-bottom: 2.25rem;
+  border-bottom: 1px solid var(--blog-rule);
+}
+.post-summary:last-child {
+  border-bottom: 0;
+}
+
+.post-summary h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.post-summary h2 a {
+  color: var(--blog-text);
+  text-decoration: none;
+}
+.post-summary h2 a:hover {
+  color: var(--blog-accent);
+}
+
+.post-summary .description {
+  color: var(--blog-muted);
+  margin: 0.6rem 0 0;
+  font-weight: 300;
+}
+
+/* Newest post gets more presence so the index is not a wall of titles. */
+.post-summary.featured h2 {
+  font-size: 1.65rem;
+}
+.post-summary.featured .description {
+  color: var(--blog-text);
+}
+
+/* ------------------------------------------------------------ code */
+
+.post code,
+.post pre {
+  font-family: var(--blog-mono);
+  font-size: 0.86em;
+}
+
+.post :not(pre) > code {
+  background: var(--blog-inline-code-bg);
+  padding: 0.12em 0.38em;
+  border-radius: 3px;
+  word-break: break-word;
+}
+
+.post pre {
+  background: var(--blog-code-bg);
+  border: 1px solid var(--blog-rule);
+  border-radius: 6px;
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+  line-height: 1.6;
+  margin: 1.4rem 0 1.6rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.post pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+/* Code blocks get a little more room than the text measure, since on a
+   security blog the code often IS the content. */
+@media (min-width: 60rem) {
+  .post pre {
+    width: calc(100% + 5rem);
+    margin-left: -2.5rem;
+  }
+}
+
+/* ------------------------------------------------------------ a11y */
+
+.post a:focus-visible,
+.blog-index a:focus-visible {
+  outline: 2px solid var(--blog-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
