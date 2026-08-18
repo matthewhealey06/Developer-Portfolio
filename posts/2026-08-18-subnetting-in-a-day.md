@@ -11,7 +11,7 @@ Everyone wants to learn things quickly. It's natural.
 You want to show off that you can learn things quicker than everyone else, and thats exactly what I got wrong.
 Yesterday I had my first interaction with binary numbers starting with simply learning how to convert 24 bit colours into binary numbers, then moved onto more complicated stuff. For example... Subnetting.
 
-Imagine this, you have just been given a client IP address, and you need to figure out what hosts actually belong to them (and which dont) with this, you would grab the host, lets say for an example it's 205.64.12.101/21.
+Imagine this, you have just been given a client IP address, and you need to figure out what hosts actually belong to them (and which dont) with this, you would grab the host, lets say for an example it's `205.64.12.101/21.`
 You would then use that to figure out where the host IPs start and end using binary.
 
 For this example, here's how i would figure it out.
@@ -22,10 +22,12 @@ Secondly (and the way I work it out) is finding out how many bits to target whic
 Next, the calculation. since we know we're comparing the 3rd octet, lets just work that one out.
 
 I like to create a base plate to refer from
+```
 128 64 32 16 8 4 2 1
+  0  0  0  0 1 1 0 0
+```
 
-From this you just add the numbers until you reach your target of 12, which would look like this...
-00001100
+From this you just add the numbers until you reach your target of 12, which you can see equals `00001100`
 
 Then 5 bits would equal (00001) leaving the remaining 100.
 To figure out how many available hosts there are you would do 32-21=11 then 2^11=2048
@@ -35,13 +37,13 @@ Now its time to figure out the start and end point.
 
 we know the start point would leave the remaining at 000 which by using binary would give us the number of 8
 
-So we know the first network address is 205.64.8.0
+So we know the first network address is `205.64.8.0`
 
-then the final broadcast address must equal 111 which would be 15 or in other words 205.64.15.255
+then the final broadcast address must equal 111 which would be 15 or in other words `205.64.15.255`
 
 So... Where did i go wrong?
 
-1. **Host count.** I initially thought if you multiply the available 3rd octet with 255 which is the 4th, which in this case would be 15-8 = 7 then did 7x255 = 1,785. That's how many hosts there are. Instead, you always do 32-x (x being the number after your IP address which in this case was 21) Then always do 2^y (y being the number x equals)
+1. **Host count.** I initially thought if you multiply the available 3rd octet with 255 which is the maximum value of the 4th octet, which in this case would be 15-8 = 7 then did 7x255 = 1,785. That's how many hosts there are. Instead, you always do 32-x (x being the number after your IP address which in this case was 21) Then always do 2^y (y being the number x equals)
 2. **Terminology.** I wrote that the range ran from the "server" address to the "network" address. Both wrong, and backwards. `205.64.8.0` is the *network address*: all host bits zero, and it names the subnet itself rather than any machine on it. `205.64.15.255` is the *broadcast address*: all host bits one, and anything sent there reaches every host on the subnet. Neither is a server, and neither is a usable host. I knew to subtract two, and i knew the usable range was inside those endpoints. What I didn't have was the right names for them, which meant I couldn't have explained what I was subtracting or why.
 
 What I'll do differently next time:
