@@ -298,9 +298,9 @@ function tagList(tags) {
   return `<ul class="tags">${items}</ul>`;
 }
 
-function postSummary(post, featured = false) {
+function postSummary(post) {
   return `
-      <article class="post-summary${featured ? " featured" : ""}">
+      <article class="post-summary">
         <h2><a href="${escapeHtml(post.url)}">${escapeHtml(post.title)}</a></h2>
         <p class="meta">
           <time datetime="${post.date.toISOString().slice(0, 10)}">${formatDate(
@@ -393,7 +393,7 @@ function buildBlog(partials) {
     title: escapeHtml(SITE.blogTitle),
     description: escapeHtml(SITE.blogDescription),
     canonical: `${SITE.url}${SITE.blogPath}/`,
-    posts: posts.map((p, i) => postSummary(p, i === 0)).join("\n"),
+    posts: posts.map((p) => postSummary(p)).join("\n"),
   });
   fs.mkdirSync(blogDist, { recursive: true });
   fs.writeFileSync(

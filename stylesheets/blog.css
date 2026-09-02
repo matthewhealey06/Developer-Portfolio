@@ -237,14 +237,6 @@
   font-weight: 300;
 }
 
-/* Newest post gets more presence so the index is not a wall of titles. */
-.post-summary.featured h2 {
-  font-size: 1.65rem;
-}
-.post-summary.featured .description {
-  color: var(--blog-text);
-}
-
 /* ------------------------------------------------------------ code */
 
 .post code,
