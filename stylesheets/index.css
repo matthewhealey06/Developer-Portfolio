@@ -154,14 +154,14 @@ body{
 #asa1 {
   align-self: center;
   text-align: center;
-  background-color: #9246fd;
+  background-color: #AD3DC9;
   font-size: 1.2em;
   padding: 20px 30px;
   border-radius: 40px;
   transition: all 0.4s ease;
 }
 #asa1:hover {
-  background-color: #cc67fc;
+  background-color: #D966CE;
 }
 #asp3 {
   position: relative;
@@ -211,7 +211,7 @@ body{
   color: #000;
   padding-bottom: 25px;
   a{
-    color: #9246fd;
+    color: #C93494;
   }
 }
 .projects-grid {
@@ -268,14 +268,14 @@ body{
 }
 .view-all-btn {
   margin-top: 60px;
-  background-color: #9246fd;
+  background-color: #E42B60;
   font-size: 1.2em;
   padding: 20px 30px;
   border-radius: 40px;
   transition: all 0.4s ease;
 }
 .view-all-btn:hover {
-  background-color: #cc67fc;
+  background-color: #F26371;
 }
 .spacer {
   height: 300px;
@@ -472,7 +472,7 @@ body.dark-bg {
 }
 .vl {
   width: 6px;
-  background: linear-gradient(to bottom, #5726fb, #cc67fc);
+  background: linear-gradient(to bottom, #FF6242, #FF222B);
   z-index: 3;
   opacity: 0.8;
   position: relative;
@@ -489,11 +489,11 @@ body.dark-bg {
 }
 .vl::before {
   top: 0;
-  background: #5726fb;
+  background: #FF6242;
 }
 .vl::after {
   bottom: 0;
-  background: #cc67fc;
+  background: #FF222B;
 }
 /* Timeline items */
 
